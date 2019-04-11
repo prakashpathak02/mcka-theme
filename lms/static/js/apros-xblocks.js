@@ -65,6 +65,11 @@ $(function () {
     $(".new-theme input[type=checkbox]:checked").parent().addClass('selected');
   });
 
+  //MCKIN-10581 - playsinline=true
+  $(document).on('DOMNodeInserted', '.oo-player-container', function(){
+    $(this).attr('playsinline', true);
+  });
+
   $(document).on('DOMNodeInserted', '.new-theme .lesson-content', function(){
     if(!isSurveyTableFilled) {
       isSurveyTableFilled = true;
